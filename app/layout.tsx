@@ -17,7 +17,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`${inter.className} bg-gray-50 text-gray-950 relative`}>
+      <body
+        className={`${inter.className} sm:pt-36 bg-gray-50 text-gray-950 relative`}
+      >
         <div className="bg-[#06b6d4] absolute top[-6rem] right-[11rem] h-[31.25rem] w-[31.25rem] rounded-full blur-[10rem] -z-10 sm:w-[68.75rem]"></div>
         <div className="bg-[#fef2f2] absolute top[-6rem] right-[11rem] h-[31.25rem] w-[50rem] rounded-full blur-[10rem] -z-10 sm:w-[68.75rem]"></div>
         <NavBar />
