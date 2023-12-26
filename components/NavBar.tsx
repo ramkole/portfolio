@@ -3,9 +3,11 @@
 import { links } from "@/lib/data";
 import { motion } from "framer-motion";
 import Link from "next/link";
-import React from "react";
+import React, { useState } from "react";
 
 const NavBar = () => {
+  const [activeSection, setActiveSection] = useState("Home");
+
   return (
     <header className="z-[999] relative">
       <motion.div
@@ -29,10 +31,14 @@ const NavBar = () => {
               animate={{ y: 0, opacity: 1 }}
             >
               <Link
-                className="flex w-full item-center justify-center px-3 py-3 hover:text-gray-950 transition"
+                className="flex w-full item-center justify-center px-3 py-3 hover:text-gray-950 transition relative"
                 href={link.hash}
+                onClick={() => setActiveSection(link.name)}
               >
                 {link.name}
+                {link.name === activeSection && (
+                  <span className="bg-gray-100 rounded-full absolute inset-0 -z-10"></span>
+                )}
               </Link>
             </motion.li>
           ))}
