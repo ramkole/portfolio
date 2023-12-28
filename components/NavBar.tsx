@@ -1,12 +1,12 @@
 "use client";
 
+import { useContextForActiveSection } from "@/context/ActiveSectionProvider";
 import { links } from "@/lib/data";
 import { motion } from "framer-motion";
 import Link from "next/link";
-import React, { useState } from "react";
 
 const NavBar = () => {
-  const [activeSection, setActiveSection] = useState("Home");
+  const { activeSection, setActiveSection } = useContextForActiveSection();
 
   return (
     <header className="z-[999] relative">
