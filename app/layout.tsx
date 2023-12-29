@@ -3,6 +3,7 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import NavBar from "@/components/NavBar";
 import ActiveSectionProvider from "@/context/ActiveSectionProvider";
+import ThemeContextProvider from "@/context/ThemeContext";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -21,12 +22,18 @@ export default function RootLayout({
       <body
         className={`${inter.className} sm:pt-36 bg-gray-50 text-gray-950 relative`}
       >
-        <div className="bg-[#06b6d4] absolute top[-6rem] right-[11rem] h-[31.25rem] w-[31.25rem] rounded-full blur-[10rem] -z-10 sm:w-[68.75rem]"></div>
-        <div className="bg-[#fef2f2] absolute top[-6rem] right-[11rem] h-[31.25rem] w-[50rem] rounded-full blur-[10rem] -z-10 sm:w-[68.75rem]"></div>
-        <ActiveSectionProvider>
-          <NavBar />
-          {children}
-        </ActiveSectionProvider>
+        <ThemeContextProvider>
+          <ActiveSectionProvider>
+            <div className="mb-5">
+              <NavBar />
+            </div>
+            <div>
+              <div className="bg-[#06b6d4] absolute top[-6rem] right-[11rem] h-[31.25rem] w-[31.25rem] rounded-full blur-[10rem] -z-10 sm:w-[68.75rem]"></div>
+              <div className="bg-[#fef2f2] absolute top[-6rem] right-[11rem] h-[31.25rem] w-[50rem] rounded-full blur-[10rem] -z-10 sm:w-[68.75rem]"></div>
+              {children}
+            </div>
+          </ActiveSectionProvider>
+        </ThemeContextProvider>
       </body>
     </html>
   );
