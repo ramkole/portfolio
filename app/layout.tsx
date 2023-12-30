@@ -28,8 +28,8 @@ export default function RootLayout({
               <NavBar />
             </div>
             <div>
-              <div className="bg-[#06b6d4] absolute top[-6rem] right-[11rem] h-[31.25rem] w-[31.25rem] rounded-full blur-[10rem] -z-10 sm:w-[68.75rem]"></div>
-              <div className="bg-[#fef2f2] absolute top[-6rem] right-[11rem] h-[31.25rem] w-[50rem] rounded-full blur-[10rem] -z-10 sm:w-[68.75rem]"></div>
+              <div className="bg-[#b1e3ed] absolute top[-6rem] right-[11rem] h-[31.25rem] w-[31.25rem] rounded-full blur-[10rem] -z-10 sm:w-[68.75rem]"></div>
+              <div className="bg-[#dabdd1] absolute top[-6rem] right-[11rem] h-[31.25rem] w-[50rem] rounded-full blur-[10rem] -z-10 sm:w-[68.75rem]"></div>
               {children}
             </div>
           </ActiveSectionProvider>
