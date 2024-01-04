@@ -11,13 +11,14 @@ import { experiencesData } from "@/lib/data";
 import { useSectionInView } from "@/lib/hooks";
 import { useTheme } from "@/context/ThemeContext";
 
-const WorkExperience = () => {
+export default function Experience() {
   const { ref } = useSectionInView("Experience");
   const { theme } = useTheme();
+  console.log("theme", theme);
 
   return (
     <section id="experience" ref={ref} className="scroll-mt-28 mb-28 sm:mb-40">
-      <SectionHeading>Experience</SectionHeading>
+      <SectionHeading>My experience</SectionHeading>
       <VerticalTimeline lineColor="">
         {experiencesData.map((item, index) => (
           <React.Fragment key={index}>
@@ -55,5 +56,4 @@ const WorkExperience = () => {
       </VerticalTimeline>
     </section>
   );
-};
-export default WorkExperience;
+}

@@ -11,10 +11,9 @@ export default function Home() {
       <HeaderHero />
       <SectionDivider />
       <Skills />
-      <Projects />
-      <AboutMe />
-
       {/* <WorkExperience /> */}
+      {/* <Projects /> */}
+      <AboutMe />
     </main>
   );
 }
